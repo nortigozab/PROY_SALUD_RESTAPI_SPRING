@@ -81,9 +81,16 @@ spring.jpa.show-sql=true
 
 ### Prueba #1
 
-En esta prueba se hace la prueba para pacientes desde insomnia
+En esta prueba se hace  para pacientes desde insomnia
 
 | Descripcion                                                     |                   Soporte                   |
 |:----------------------------------------------------------------| :-----------------------------------------: |
-| En esta prueba se hace la prueba para pacientes desde insomnia  | ![Soporte 1](./img/1.gif?raw=true "import") |
+| En esta prueba se hace  para pacientes desde insomnia  | ![Soporte 1](./img/1.gif?raw=true "import") |
 
+### Prueba #2
+
+En esta prueba se hace para doctores desde insomnia
+
+| Descripcion                                          |                   Soporte                   |
+|:-----------------------------------------------------|:-------------------------------------------:|
+| En esta prueba se hace para doctores desde insomnia  | ![Soporte 2](./img/2.gif?raw=true "import") |
