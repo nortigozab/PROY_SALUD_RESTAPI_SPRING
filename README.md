@@ -106,11 +106,7 @@ En esta prueba se hace ya con todas con algunas limitaciones de forma grafica
 |:---------------------------------------|:--------:|:-----------------------------|
 | - Post<br/>- Get<br/>- Put<br/>-Delete |   - Post<br/>- Get<br/>-Delete       | - Post<br/>- Get             |
 
-
-
-:warning: **Correcion:** En el video se ve como se elimina paciente sin confirmacion, pero ya esta corregido en el codigo.
 ---
-
 ## Rutas
 
 ## Citas Medicas
