@@ -12,10 +12,14 @@ public class InicioController {
     public String getRoot() {
         String message = "Bienvenido a la API de Salud\n\n";
         message += "Rutas disponibles:\n";
-        message += "- /api/pacientes\n";
-        message += "- /api/doctores\n";
-        // Agrega aquí otras rutas de tu API
-
+        message += "Get/Post - /api/pacientes\n";
+        message += "Get/Put/Delete - /api/pacientes/id_paciente\n";
+        message += "Get/Post - /api/doctores\n";
+        message += "Get/Put/Delete - /api/doctores/id_doctor\n";
+        message += " Get/Post - /api/citasmedicas\n";
+        message += " Get - /api/citasmedicas/id_cita\n";
+        message += " Get - /api/citasmedicas/crear/n 'Inicio para crear cita'\n";
+        message += " Get - /api/citasmedicas/crear/id_especialidad 'Cambio de especialidad para ver doctores'\n";
         return message;
     }
 }
