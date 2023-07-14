@@ -16,8 +16,6 @@ El objetivo es proporcionar una solución completa, eficiente y segura para la a
 - [Spring Boot Test](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing.spring-boot-applications.testing-autoconfigured-tests): Framework para realizar pruebas unitarias y de integración en aplicaciones Spring Boot. <i class="fas fa-vial"></i> :microscope:
 
 
-Aquí tienes la adaptación del texto con los iconos correspondientes:
-
 ## Entorno de desarrollo
 
 La aplicación se desarrolló y probó en el siguiente entorno:
@@ -74,8 +72,6 @@ spring.jpa.show-sql=true
 
 
 ## Linea de Tiempo
-
-
 
 ### Prueba #1
 
