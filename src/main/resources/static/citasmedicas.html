@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>API de Salud</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>Interfaz de Citas Médicas</h1>
+
+  <h2>Crear Cita Médica</h2>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <form id="crearForm">
+          <div class="form-group">
+            <label for="numero_cedula">Número de Cédula:</label>
+            <input type="text" class="form-control" id="numero_cedula" name="numero_cedula">
+          </div>
+          <div class="form-group">
+            <label for="especialidad">Especialidad:</label>
+            <select class="form-control" id="especialidad" name="especialidad" required>
+              <option value="">..............</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="doctor">Doctor:</label>
+            <select class="form-control" id="doctor" name="doctor" required>
+              <option value="">Seleccionar Doctor</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input type="date" class="form-control" id="fecha" name="fecha" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+      </div>
+
+      <div class="col-md-6">
+        <h2>Lista de Citas Médicas</h2>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Especialidad</th>
+            <th>Doctor</th>
+            <th>Fecha</th>
+            <th>Paciente</th>
+            <th>Disponibilidad</th>
+          </tr>
+          </thead>
+          <tbody id="citasMedicasTable">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./js/citasmedicas.js"></script>
+</body>
+</html>
