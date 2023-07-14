@@ -24,11 +24,11 @@ Aquí tienes la adaptación del texto con los iconos correspondientes:
 
 La aplicación se desarrolló y probó en el siguiente entorno:
 
-- Sistema operativo: <i class="fab fa-linux"></i> Linux (derivado de Arch Linux, EndeavourOS) :penguin:
-- Herramienta de desarrollo: <i class="fab fa-java"></i> IntelliJ IDEA :computer:
-- Base de datos: <i class="fas fa-database"></i> DBeaver :floppy_disk:
-- Navegador web: <i class="fab fa-chrome"></i> Google Chrome :globe_with_meridians:
-- Cliente de solicitudes HTTP: <i class="fab fa-insomnia"></i> Insomnia :link:
+- **Sistema operativo**: <i class="fab fa-linux"></i> Linux (derivado de Arch Linux, EndeavourOS) :penguin:
+- **Herramienta de desarrollo**: <i class="fab fa-java"></i> IntelliJ IDEA :computer:
+- **Base de datos**: <i class="fas fa-database"></i> DBeaver :floppy_disk:
+- **Navegador web**: <i class="fab fa-chrome"></i> Google Chrome :globe_with_meridians:
+- **Cliente de solicitudes HTTP**: <i class="fab fa-insomnia"></i> Insomnia :link:
 
 ## Instalación y Ejecución de la Aplicación :zap:
 
@@ -83,14 +83,22 @@ spring.jpa.show-sql=true
 
 En esta prueba se hace  para pacientes desde insomnia
 
-| Descripcion                                                     |                   Soporte                   |
-|:----------------------------------------------------------------| :-----------------------------------------: |
-| En esta prueba se hace  para pacientes desde insomnia  | ![Soporte 1](./img/1.gif?raw=true "import") |
+| Descripcion                                                                                                                                                            |                   Soporte                   |
+|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------| :-----------------------------------------: |
+| En esta prueba se hace  para pacientes desde insomnia<br/> - Consulta Todos<br/>- Consulta un paciente<br/>- Edita Paciente<br/>- Elimina Paciente<br/>- Crea Paciente | ![Soporte 1](./img/1.gif?raw=true "import") |
 
 ### Prueba #2
 
 En esta prueba se hace para doctores desde insomnia
 
-| Descripcion                                          |                   Soporte                   |
-|:-----------------------------------------------------|:-------------------------------------------:|
-| En esta prueba se hace para doctores desde insomnia  | ![Soporte 2](./img/2.gif?raw=true "import") |
+| Descripcion                                                                                                                                                 |                   Soporte                   |
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------:|
+| En esta prueba se hace para doctores desde insomnia<br/>- Consulta Todos<br/>- Consulta un doctor<br/>- Edita Doctor<br/>- Elimina Doctor<br/>- Crea Doctor | ![Soporte 2](./img/2.gif?raw=true "import") |
+
+### Prueba #3
+
+En esta prueba se hace para citas medicas desde insomnia
+
+| Descripcion                                                                                                                                             |                   Soporte                   |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------:|
+| En esta prueba se hace para citas medicas desde insomnia<br/>- Consulta Todos<br/>- Consulta una Cita medica<br/>- Crea Cita Medica | ![Soporte 3](./img/3.gif?raw=true "import") |
