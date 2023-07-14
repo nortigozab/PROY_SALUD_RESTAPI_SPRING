@@ -28,26 +28,32 @@ public class DoctoresController {
     private EspecialidadesService especialidadesService;
 
     @GetMapping()
-    public List<DoctoresEspecialidad> getAll(){
-        return doctoresEspeService.getDoctores();
+    public ResponseEntity<Map<String, Object>> getAll() {
+        List<DoctoresEspecialidad> doctores = doctoresEspeService.getDoctores();
+        List<Especialidades> especialidades = especialidadesService.getEspecialidades();
 
+        Map<String, Object> response = new HashMap<>();
+        response.put("doctores", doctores);
+        response.put("especialidades", especialidades);
+
+        return ResponseEntity.ok(response);
     }
     @GetMapping("/{id_doctor}")
     public ResponseEntity<?> getBId(@PathVariable("id_doctor") Long id_doctor){
         Optional<DoctoresEspecialidad> doctor = doctoresEspeService.getDoctorEspe(id_doctor);
-        List<Especialidades> especialidades= especialidadesService.getEspecialidades();
+        List<Especialidades> especialidades = especialidadesService.getEspecialidades();
         if (doctor.isPresent()) {
             Map<String, Object> response = new HashMap<>();
             response.put("doctor", doctor.get());
             response.put("especialidades", especialidades);
             return ResponseEntity.ok(response);
         } else {
-            String errorMessage = "No Existe el doctor con Id: "+id_doctor;
+            String errorMessage = "No Existe el doctor con Id: " + id_doctor;
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(errorMessage);
         }
-
     }
+
     @PostMapping
     public ResponseEntity<?> save(@RequestBody Doctores doctores) {
         try {
