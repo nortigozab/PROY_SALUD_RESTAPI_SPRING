@@ -1,19 +1,19 @@
 package com.api.PROY_SALUD_RESTAPI_SPRING.controller;
-
 import com.api.PROY_SALUD_RESTAPI_SPRING.entity.Pacientes;
 import com.api.PROY_SALUD_RESTAPI_SPRING.service.PacientesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
-
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
-
 @RestController
 @RequestMapping(path = "api/pacientes")
 public class PacientesController {
@@ -40,7 +40,6 @@ public class PacientesController {
         }
 
     }
-
     @PostMapping
     public ResponseEntity<?> save(@RequestBody Pacientes pacientes) {
         try {
@@ -48,13 +47,11 @@ public class PacientesController {
             return new ResponseEntity<>(nuevo_Paciente, HttpStatus.CREATED);
         } catch (Exception e) {
             String errorMessage = "Ocurrió un error al guardar el paciente";
-            String error=e.getMessage();
+            String error = e.getMessage();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(error);
         }
     }
-
-
     @PutMapping("/{id_paciente}")
     public ResponseEntity<?> saveUpdate(@PathVariable("id_paciente") Long id_paciente, @RequestBody Pacientes paciente) {
         try {
@@ -62,10 +59,24 @@ public class PacientesController {
             if (pacienteOptional.isPresent()) {
                 Pacientes pacienteId = pacienteOptional.get();
 
+                // Obtener la fecha del paciente en formato de cadena
+                Date fechaNacimientoStr = paciente.getFecha_nacimiento();
+
+                // Formatear la cadena de fecha a LocalDate
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                LocalDate fechaNacimiento = LocalDate.parse(dateFormat.format(fechaNacimientoStr), formatter);
+
+                // Sumar un día a la fecha
+                LocalDate fechaNacimientoMasUnDia = fechaNacimiento.plusDays(1);
+                Date fechaNacimientoMasUnDiaUtil = java.sql.Date.valueOf(fechaNacimientoMasUnDia);
+
+                // Asignar la fecha formateada al objeto Pacientes
+                pacienteId.setFecha_nacimiento(fechaNacimientoMasUnDiaUtil);
+
                 pacienteId.setNombre(paciente.getNombre());
                 pacienteId.setApellido(paciente.getApellido());
                 pacienteId.setNumero_cedula(paciente.getNumero_cedula());
-                pacienteId.setFecha_nacimiento(paciente.getFecha_nacimiento());
                 pacienteId.setTelefono(paciente.getTelefono());
                 Pacientes pacienteUpdated = pacientesService.saveOrUpdate(pacienteId);
                 return new ResponseEntity<>(pacienteUpdated, HttpStatus.CREATED);
@@ -74,12 +85,12 @@ public class PacientesController {
             }
         } catch (Exception e) {
             String errorMessage = "Ocurrió un error al Actualizar el paciente";
-            String[] error=e.getMessage().split("]");
+            String[] error = e.getMessage().split("]");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(error[0]+"]");
+                    .body(error[0] + "]");
         }
-
     }
+
     @DeleteMapping("/{id_paciente}")
     public ResponseEntity<HashMap<String, Boolean>> delete(@PathVariable Long id_paciente) {
         Optional<Pacientes> paciente = pacientesService.getPaciente(id_paciente);
