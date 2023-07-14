@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>API de Salud</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>Interfaz de Pacientes</h1>
+
+  <h2>Crear Paciente</h2>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <form id="crearForm">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+          </div>
+
+          <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" required>
+          </div>
+
+          <div class="form-group">
+            <label for="cedula">Número de Cédula:</label>
+            <input type="text" class="form-control" id="cedula" name="cedula" required>
+            <div id="cedulaError" class="invalid-feedback"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" required>
+            <div id="telefonoError" class="invalid-feedback"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+      </div>
+
+      <div class="col-md-6">
+        <h2>Lista de Pacientes</h2>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Número de Cédula</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+          </tr>
+          </thead>
+          <tbody id="pacientesTable">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./js/pacientes.js"></script>
+</body>
+</html>
