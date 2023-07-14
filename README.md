@@ -106,6 +106,12 @@ En esta prueba se hace ya con todas con algunas limitaciones de forma grafica
 |:---------------------------------------|:--------:|:-----------------------------|
 | - Post<br/>- Get<br/>- Put<br/>-Delete |   - Post<br/>- Get<br/>-Delete       | - Post<br/>- Get             |
 
+
+
+https://github.com/nortigozab/PROY_SALUD_RESTAPI_SPRING/assets/77377179/0357efe3-22e8-4da7-ba4c-e149303f805b
+
+
+
 ---
 ## Rutas
 
