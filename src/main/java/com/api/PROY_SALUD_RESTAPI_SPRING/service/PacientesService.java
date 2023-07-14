@@ -13,8 +13,9 @@ public class PacientesService {
     @Autowired
     PacientesRepository pacientesRepository;
     public List<Pacientes> getPacientes(){
-        return pacientesRepository.findAll();
+        return  pacientesRepository.findAll();
     }
+
     public Optional<Pacientes> getPaciente(Long id_paciente){
         return pacientesRepository.findById(id_paciente);
     }
