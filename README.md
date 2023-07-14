@@ -6,8 +6,6 @@ El proyecto consiste en un aplicativo web (REST API) para la gestión de pacient
 ## Objetivo
 El objetivo es proporcionar una solución completa, eficiente y segura para la administración de datos médicos.
 
-Según el archivo XML proporcionado, las tecnologías utilizadas en el proyecto son las siguientes:
-
 ## Tecnologías utilizadas
 - [Spring Boot](https://spring.io/projects/spring-boot): Framework de desarrollo de aplicaciones Java. <i class="fab fa-java"></i> :rocket:
 - [Spring Data JPA](https://spring.io/projects/spring-data-jpa): Biblioteca de persistencia que facilita el acceso y la manipulación de datos relacionales en aplicaciones Java. <i class="fas fa-database"></i> :floppy_disk:
