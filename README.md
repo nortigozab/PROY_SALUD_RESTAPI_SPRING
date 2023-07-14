@@ -107,6 +107,10 @@ En esta prueba se hace ya con todas con algunas limitaciones de forma grafica
 | - Post<br/>- Get<br/>- Put<br/>-Delete |   - Post<br/>- Get<br/>-Delete       | - Post<br/>- Get             |
 
 
+
+https://github.com/nortigozab/PROY_SALUD_RESTAPI_SPRING/assets/77377179/9424d9bd-8d77-4e34-93c6-ebbdff431b50
+
+
 :warning: **Correcion:**  En el video se ve como se elimina paciente sin confirmacion, ya en el codigo esta corregido. 
 ---
 ## Rutas
