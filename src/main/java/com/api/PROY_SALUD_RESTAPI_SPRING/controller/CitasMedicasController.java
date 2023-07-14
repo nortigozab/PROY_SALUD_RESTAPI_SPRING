@@ -27,9 +27,15 @@ public class CitasMedicasController {
     private PacientesService pacientesService;
 
     @GetMapping()
-    public List<CitasMedicasTodo> getAll(){
-        return citasMedicasTodoService.getCitasMedicasTodo();
+    public ResponseEntity<Map<String, Object>> getAll() {
+        List<CitasMedicasTodo> citasMedicas = citasMedicasTodoService.getCitasMedicasTodo();
+        List<Especialidades> especialidades = especialidadesService.getEspecialidades();
+        Map<String, Object> response = new HashMap<>();
+        response.put("citasMedicas", citasMedicas);
+        response.put("especialidades", especialidades);
+        return ResponseEntity.ok(response);
     }
+
     @GetMapping("/{id_cita}")
     public ResponseEntity<?> getBId(@PathVariable("id_cita") Long id_cita){
         Optional<CitasMedicasTodo> citamedica = citasMedicasTodoService.getCitaMedicaTodo(id_cita);
@@ -64,6 +70,7 @@ public class CitasMedicasController {
     @PostMapping
     public ResponseEntity<?> save(@RequestBody CitaMedicaPost citaMedicaPost) {
         try {
+
             if(citaMedicaPost.getNumero_cedula()==null){
                 CitasMedicas newCitaMedica = new CitasMedicas();
                 newCitaMedica.setId_paciente(null);
@@ -82,6 +89,7 @@ public class CitasMedicasController {
                     newCitaMedica.setEspecialidad(citaMedicaPost.getId_especialidad());
                     newCitaMedica.setId_doctor(citaMedicaPost.getId_doctor());
                     newCitaMedica.setFecha(citaMedicaPost.getFecha());
+                    newCitaMedica.setDisponibilidad(false);
                     CitasMedicas citasMedica = citasMedicasService.saveOrUpdate(newCitaMedica);
                     return new ResponseEntity<>(citasMedica, HttpStatus.CREATED);
                 } else {
