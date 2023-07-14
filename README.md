@@ -60,7 +60,7 @@ spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 spring.jpa.hibernate.ddl-auto=none
 spring.jpa.show-sql: true
 ```
-:warning: **Advertencia:** Recuerde yo utilice mariaDB como motor de bases de datos por mi distribucion de entorno si en su caso utilizara mysql haga el cambio tanto en las dependecia como en el archivo anterior con una structura parecida a esta:
+:warning: **Advertencia:** Recuerde yo utilice mariaDB como motor de bases de datos por mi entorno de desarrollo, si en su caso utilizara mysql haga el cambio tanto en las dependencia como en el archivo anterior con una estructura parecida a esta:
 ```bash
 spring.datasource.url=jdbc:mysql://localhost:3306/salud_spring
 spring.datasource.username=root
