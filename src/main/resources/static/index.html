@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>API de Salud</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <h1 class="mb-4">Bienvenido a la API de Salud</h1>
+      <h2 class="mb-3">Pacientes:</h2>
+      <h3 class="mb-3">Cliente de solicitudes HTTP:</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Método</th>
+          <th>Ruta</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="text-wrap">GET/POST</td>
+          <td class="text-truncate"><code>http://localhost:8080/api/pacientes</code></td>
+        </tr>
+        <tr>
+          <td class="text-wrap">GET/PUT/DELETE</td>
+          <td class="text-truncate"><code>http://localhost:8080/api/pacientes/id_paciente</code></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h3 class="mb-3">Single Page:</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Método</th>
+          <th>Ruta</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="text-wrap">GET/POST/PUT/DELETE</td>
+          <td class="text-truncate"><code>http://localhost:8080/pacientes.html</code></td>
+        </tr>
+        </tbody>
+      </table>
+      <h2 class="mb-3">Doctores:</h2>
+      <h3 class="mb-3">Cliente de solicitudes HTTP:</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Método</th>
+          <th>Ruta</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="text-wrap">GET/POST</td>
+          <td class="text-truncate"><code>http://localhost:8080/api/doctores</code></td>
+        </tr>
+        <tr>
+          <td class="text-wrap">GET/PUT/DELETE</td>
+          <td class="text-truncate"><code>http://localhost:8080/api/doctores/id_doctor</code></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h3 class="mb-3">Single Page:</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Método</th>
+          <th>Ruta</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="text-wrap">GET/POST/DELETE</td>
+          <td class="text-truncate"><code>http://localhost:8080/doctores.html</code></td>
+        </tr>
+        </tbody>
+      </table>
+</div>
+
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="mb-3">Citas Médicas:</h2>
+
+      <h3 class="mb-3">Cliente de solicitudes HTTP:</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Método</th>
+          <th>Ruta</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>GET/POST</td>
+          <td><code>http://localhost:8080/api/citasmedicas</code></td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td><code>http://localhost:8080/api/citasmedicas/id_cita</code></td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td><code>http://localhost:8080/api/citasmedicas/crear/n</code></td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td><code>http://localhost:8080/api/citasmedicas/crear/id_especialidad</code></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h3 class="mb-3">Single Page:</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Método</th>
+          <th>Ruta</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>GET/POST</td>
+          <td><code>http://localhost:8080/citasmedicas.html</code></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
