@@ -47,7 +47,7 @@ La aplicación se desarrolló y probó en el siguiente entorno:
 
 Con estos pasos, podrás clonar el repositorio, abrir el proyecto en tu IDE preferido y ejecutar la aplicación de Spring Boot. Asegúrate de tener las configuraciones y dependencias adecuadas en tu entorno de desarrollo antes de ejecutar la aplicación.
 
-:key:Recuerda que se debe crear el archivo .env para que la API funcione.
+## :key:Recuerda que se debe crear el archivo **application.properties** para que la API funcione.
 
 - Asegurese que debe tener el nombre **application.properties** en la ruta **/src/main/resources**
 - Ingresar los datos segun esta estructura
