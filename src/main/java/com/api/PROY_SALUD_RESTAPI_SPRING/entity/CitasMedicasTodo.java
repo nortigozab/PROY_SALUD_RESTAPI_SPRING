@@ -23,5 +23,5 @@ public class CitasMedicasTodo {
     @JoinColumn(name = "especialidad")
     private Especialidades especialidad;
     private Date fecha;
-    private boolean disponibilidad;
+    private Boolean disponibilidad;
 }
