@@ -1,14 +1,11 @@
-// Función para obtener la lista de citas médicas
+
 const especialidadSelect = document.getElementById("especialidad");
 function getCitasMedicas() {
     fetch("/api/citasmedicas")
         .then(response => response.json())
         .then(data => {
-            // Limpiar la tabla de citas médicas
             const citasMedicasTable = document.getElementById("citasMedicasTable");
             citasMedicasTable.innerHTML = "";
-
-            // Llenar el select de especialidades
             const especialidadSelect = document.getElementById("especialidad");
             especialidadSelect.innerHTML = "";
             const option = document.createElement("option");
@@ -21,8 +18,6 @@ function getCitasMedicas() {
                 option.text = especialidad.nombre_especialidad;
                 especialidadSelect.appendChild(option);
             });
-
-            // Iterar sobre las citas médicas y agregarlas a la tabla
             data.citasMedicas.forEach(citaMedica => {
                 const row = document.createElement("tr");
                 const fechaFormatted = formatDate(new Date(citaMedica.fecha));
@@ -42,17 +37,14 @@ function getCitasMedicas() {
         })
         .catch(error => console.log("Error al obtener las citas médicas:", error));
 }
-// Función para crear una nueva cita médica
-crearForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // Evitar que el formulario se envíe por defecto
 
-    // Obtener los valores de los campos del formulario
+crearForm.addEventListener("submit", (event) => {
+    event.preventDefault();
     const especialidad = document.getElementById("especialidad").value;
     const doctor = document.getElementById("doctor").value;
     const fecha = document.getElementById("fecha").value;
     let numero_cedula = document.getElementById("numero_cedula").value;
 
-    // Validar los campos
     if (especialidad.trim() === '' || doctor.trim() === '' || fecha.trim() === '') {
         window.alert('Todos los campos son requeridos menos cedula');
         return;
@@ -66,11 +58,8 @@ crearForm.addEventListener("submit", (event) => {
         numero_cedula=null;
     }
     const fecha_n = new Date(fecha);
-// Sumar un día a la fecha
     fecha_n.setDate(fecha_n.getDate() + 1);
-// Obtener el nuevo valor de fecha en el formato deseado
     const nuevaFecha = fecha_n.toISOString().split("T")[0];
-    // Crear el objeto de cita médica con los datos del formulario
     const citaMedica = {
         numero_cedula: numero_cedula,
         id_especialidad: especialidad,
@@ -78,7 +67,6 @@ crearForm.addEventListener("submit", (event) => {
         fecha: nuevaFecha
     };
     console.log(citaMedica)
-    // Realizar una solicitud POST para guardar la cita médica
     fetch("/api/citasmedicas", {
         method: "POST",
         headers: {
@@ -88,7 +76,6 @@ crearForm.addEventListener("submit", (event) => {
     })
         .then(response => response.json())
         .then(data => {
-            // Limpiar el formulario y actualizar la lista de citas médicas
             crearForm.reset();
             getCitasMedicas();
         })
@@ -100,7 +87,6 @@ function Errores (error){
     crearForm.reset();
     getCitasMedicas();
 }
-// Función para cargar las especialidades y doctores
 function cargarEspecialidadesYDoctores(especia) {
     fetch(`/api/citasmedicas/crear/${especia}`)
         .then(response => response.json())
@@ -129,7 +115,6 @@ function cargarEspecialidadesYDoctores(especia) {
             }
 
             if (doctores && Array.isArray(doctores)) {
-                // Llenar el select de doctores
                 var doctorSelect = document.getElementById("doctor");
                 doctorSelect.innerHTML = "";
                 var option = document.createElement("option");
@@ -148,7 +133,6 @@ function cargarEspecialidadesYDoctores(especia) {
 }
 
 
-// Evento para cargar las especialidades y doctores cuando se selecciona una opción
 especialidadSelect.addEventListener("change", () => {
     const especia = especialidadSelect.value;
     if(especia!="")cargarEspecialidadesYDoctores(especia);
@@ -158,5 +142,4 @@ function formatDate(date) {
     const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
     return date.toLocaleDateString('es-ES', options);
 }
-// Cargar la lista de citas médicas al cargar la página
 window.addEventListener("DOMContentLoaded", getCitasMedicas);
