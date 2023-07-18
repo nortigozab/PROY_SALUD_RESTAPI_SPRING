@@ -84,7 +84,6 @@ public class PacientesController {
                     .body(error[0] + "]");
         }
     }
-
     @DeleteMapping("/{id_paciente}")
     public ResponseEntity<HashMap<String, Boolean>> delete(@PathVariable Long id_paciente) {
         Optional<Pacientes> paciente = pacientesService.getPaciente(id_paciente);
