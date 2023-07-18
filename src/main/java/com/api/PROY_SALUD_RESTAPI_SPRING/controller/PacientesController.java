@@ -59,19 +59,13 @@ public class PacientesController {
             if (pacienteOptional.isPresent()) {
                 Pacientes pacienteId = pacienteOptional.get();
 
-                // Obtener la fecha del paciente en formato de cadena
+                // Formatear Fecha de nacimiento
                 Date fechaNacimientoStr = paciente.getFecha_nacimiento();
-
-                // Formatear la cadena de fecha a LocalDate
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                 LocalDate fechaNacimiento = LocalDate.parse(dateFormat.format(fechaNacimientoStr), formatter);
-
-                // Sumar un día a la fecha
                 LocalDate fechaNacimientoMasUnDia = fechaNacimiento.plusDays(1);
                 Date fechaNacimientoMasUnDiaUtil = java.sql.Date.valueOf(fechaNacimientoMasUnDia);
-
-                // Asignar la fecha formateada al objeto Pacientes
                 pacienteId.setFecha_nacimiento(fechaNacimientoMasUnDiaUtil);
 
                 pacienteId.setNombre(paciente.getNombre());
