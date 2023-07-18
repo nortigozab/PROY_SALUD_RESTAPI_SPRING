@@ -66,6 +66,31 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 spring.jpa.hibernate.ddl-auto=none
 spring.jpa.show-sql=true
 ```
+## Base de Datos
+|                               Modelo                                |
+|:-------------------------------------------------------------------:|
+| ![Base:de_datos](./img/database_salud_spring.png?raw=true "import") |
+
+| Tabla "especialidades" |
+|------------------------|
+| Descripción            |
+| Esta tabla llamada "especialidades" almacena información sobre las diferentes especialidades médicas disponibles en el sistema. Tiene dos columnas: "id_especialidad", que es un número único que identifica cada especialidad de forma automática, y "nombre_especialidad", que es una cadena de texto que guarda el nombre de cada especialidad. |
+
+| Tabla "pacientes" |
+|-------------------|
+| Descripción       |
+| La tabla "pacientes" contiene información sobre los pacientes registrados en el sistema. Tiene varias columnas, como "id_paciente" que es un número único que se genera automáticamente, "nombre" y "apellido" para almacenar el nombre y apellido del paciente, respectivamente. Además, hay una columna llamada "numero_cedula", que debe ser un número de cédula único para cada paciente. La columna "fecha_nacimiento" guarda la fecha de nacimiento del paciente, y "telefono" almacena su número de teléfono. |
+
+| Tabla "doctores" |
+|-----------------|
+| Descripción     |
+| En la tabla "doctores" se registran los médicos que forman parte del sistema. Cada médico tiene un identificador único "id_doctor" que se genera automáticamente. Las columnas "nombre" y "apellido" guardan el nombre y apellido del médico. La columna "especialidad" contiene el número de identificación de la especialidad a la que pertenece el médico (relacionada con la tabla "especialidades"). "consultorio" es un número que indica el consultorio donde atiende el médico. Además, se almacena el "correo_contacto" para comunicarse con el médico. |
+
+| Tabla "citas_medicas" |
+|----------------------|
+| Descripción          |
+| Esta tabla llamada "citas_medicas" registra todas las citas médicas disponibles y reservadas. Cada cita tiene un "id_cita" único generado automáticamente. La columna "id_doctor" indica el médico al que se le asigna la cita, y "id_paciente" identifica al paciente que tiene la cita programada (si está reservada). La columna "especialidad" enlaza con la tabla "especialidades" para identificar la especialidad asociada con la cita. La "fecha" guarda el día y la fecha de la cita. La columna "disponibilidad" es un valor booleano que indica si la cita está disponible (true) o reservada (false). |
+
 ## Probar
 
 **🎉Abre el software de solicitud http que utilices en este caso utilice **insomnia** y utiliza la url `https://127.0.0.1:8080` o el puerto que le asigne**
@@ -109,8 +134,7 @@ En esta prueba se hace ya con todas con algunas limitaciones de forma grafica
 
 :warning: **Correcion:**  En el video se ve como se elimina paciente sin confirmacion, ya en el codigo esta corregido. 
 ---
-## Rutas
-
+## Rutas 
 ## Citas Medicas
 ### Ruta: **GET /api/citasmedicas**
    - Descripción: Obtiene todas las citas médicas y especialidades.
